@@ -19,7 +19,7 @@ branch=$(git branch | grep \* | cut -d ' ' -f2-)
 echo $CYAN"Building Node Manager "$branch" ..."$COLOR_END
 popd > /dev/null
 
-docker run -it --rm \
+docker run --rm \
     -v $(pwd)/quorum-maker-nodemanager:/go/src/github.com/synechron-finlabs/quorum-maker-nodemanager \
     golang:1.10.2 \
     /bin/sh -c 'cd /go/src/github.com/synechron-finlabs/quorum-maker-nodemanager ; go get ./... ; go build'
