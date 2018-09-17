@@ -16,7 +16,7 @@ branch=$(git branch | grep \* | cut -d ' ' -f2-)
 echo $CYAN"Building QM UI "$branch" ..."$COLOR_END
 popd > /dev/null
 
-docker run -it --rm \
+docker run --rm \
     -v $(pwd)/quorum-maker-ui/webApp:/quorum-maker-ui \
     -w /quorum-maker-ui \
     syneblock/cicd \
