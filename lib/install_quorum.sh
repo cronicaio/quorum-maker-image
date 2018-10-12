@@ -7,7 +7,7 @@ echo $CYAN"Building Quorum, "$quorum_version"..."$COLOR_END
 
 rm -rf quorum
 
-docker run --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/vsmk98/quorum.git
+docker run --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/jpmorganchase/quorum.git
 docker run --rm -v ${HOME}:/root -v $(pwd):/git -w /git/quorum alpine/git checkout $quorum_version
 docker run --rm -v $(pwd)/quorum:/quorum -w /quorum golang:1.10.2 make all
 
