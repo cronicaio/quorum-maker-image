@@ -32,7 +32,7 @@ else
     branch=$(git branch | grep \* | cut -d ' ' -f2-)
 
 
-    getTag $quorum_version 2.1.0 quorum_version
+    getTag $quorum_version master quorum_version
 
     getTag $branch $quorum_maker_version quorum_maker_version
 
